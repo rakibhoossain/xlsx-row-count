@@ -30,8 +30,8 @@ func main() {
 
 func logError(err error) {
 	// Open or create the error log file
-	f, err := os.OpenFile("error.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if err != nil {
+	f, fileErr := os.OpenFile("error.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if fileErr != nil {
 		return
 	}
 	defer func(f *os.File) {
